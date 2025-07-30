@@ -1,0 +1,20 @@
+# =============================================================================
+# Example terraform.tfvars file for Advanced Web Application
+# =============================================================================
+# Copy this file to terraform.tfvars and update the values as needed
+
+# RDS Configuration
+rds_password = "your-secure-production-password-here"
+
+# SSL Certificate (optional - leave empty to disable HTTPS)
+certificate_arn = "arn:aws:acm:us-east-1:123456789012:certificate/your-certificate-id"
+
+# SSH Access (restrict to your office/home IP addresses)
+allowed_ssh_cidrs = [
+  "10.0.0.0/16",      # VPC CIDR
+  "192.168.1.0/24",   # Office network
+  "203.0.113.0/24"    # Home network
+]
+
+# Note: In production, consider using AWS Secrets Manager or AWS Systems Manager
+# Parameter Store for sensitive values instead of storing them in plain text. 

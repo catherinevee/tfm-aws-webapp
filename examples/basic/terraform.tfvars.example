@@ -1,0 +1,10 @@
+# =============================================================================
+# Example terraform.tfvars file for Basic Web Application
+# =============================================================================
+# Copy this file to terraform.tfvars and update the values as needed
+
+# RDS Configuration
+rds_password = "your-secure-password-here"
+
+# Note: In production, consider using AWS Secrets Manager or AWS Systems Manager
+# Parameter Store for sensitive values instead of storing them in plain text. 

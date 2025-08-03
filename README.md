@@ -52,8 +52,28 @@ tfm-aws-webapp/
 ├── versions.tf             # Terraform and provider versions
 ├── templates/
 │   └── user_data.sh        # EC2 instance bootstrap script
+├── tests/
+│   └── basic.tftest.hcl    # Terraform test suite
+├── RESOURCE_MAP.md         # Comprehensive resource documentation
+├── CHANGELOG.md            # Version history and changes
+├── CONTRIBUTING.md         # Contribution guidelines
+├── CODE_OF_CONDUCT.md      # Community code of conduct
 └── README.md               # This file
 ```
+
+## 📊 Resource Map
+
+For a detailed overview of all AWS resources created by this module, including dependencies, naming conventions, and security considerations, see the [Resource Map](RESOURCE_MAP.md) documentation.
+
+**Resource Summary:**
+- **34 total resources** across 7 categories
+- **Networking**: VPC, subnets, gateways, route tables
+- **Security**: Security groups for ALB, EC2, and RDS
+- **Load Balancing**: ALB, target groups, listeners
+- **Compute**: Launch template and Auto Scaling Group
+- **Database**: RDS instance and supporting resources
+- **IAM**: Roles and policies for EC2 and RDS
+- **Monitoring**: CloudWatch logs, alarms, and metrics
 
 ## 🔧 Usage
 
@@ -367,11 +387,33 @@ health_check_path = "/api/health"
 
 ## 🤝 Contributing
 
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed information on how to contribute to this project.
+
+### Quick Start
+
 1. Fork the repository
-2. Create a feature branch
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+4. Add tests for new functionality
+5. Ensure all tests pass (`terraform test`)
+6. Update documentation as needed
+7. Submit a pull request
+
+### Code of Conduct
+
+This project adheres to our [Code of Conduct](CODE_OF_CONDUCT.md). Please read it before contributing.
+
+### Testing
+
+Run the test suite to ensure your changes work correctly:
+
+```bash
+# Run all tests
+terraform test
+
+# Run specific test file
+terraform test tests/basic.tftest.hcl
+```
 
 ## 📄 License
 
